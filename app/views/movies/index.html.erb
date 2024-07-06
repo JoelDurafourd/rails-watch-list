@@ -1,0 +1,6 @@
+<% @movies.each do |movie| %>
+  <article class="mb-3">
+    <h2><a href="<%= movie_path(movie) %>"><%= movie.title %></a></h2>
+  </article>
+<% end %>
+<a class="btn btn-primary" href="/movies">New movie</a>
