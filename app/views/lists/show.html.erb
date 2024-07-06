@@ -1,0 +1,10 @@
+<h1>name: <%= @list.name %></h1>
+<ul>
+  <% @list.movies.each do |movie| %>
+  <% bookmark = Bookmark.where(movie: movie, list: @list).first %>
+  <li><%= movie.title %></li>
+    <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Delete bookmark?"} do %>
+    <i class="fa-solid fa-trash"></i>
+    <% end %>
+  <% end %>
+</ul>
