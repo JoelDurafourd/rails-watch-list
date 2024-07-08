@@ -1,10 +1,27 @@
 <h1><%= @list.name %></h1>
-<ul>
-  <% @list.movies.each do |movie| %>
-  <% bookmark = Bookmark.where(movie: movie, list: @list).first %>
-  <li><%= movie.title %> <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Delete bookmark?"} do %> <i class="fa-solid fa-trash"></i></li>
+
+<div>
+    <% @list.movies.each do |movie| %>
+    <% bookmark = Bookmark.where(movie: movie, list: @list).first %>
+    <div class="card-product">
+      <img src=<%= movie.poster_url %> />
+        <div class="card-product-infos">
+          <h2><%= movie.title %></h2>
+          <p><%= movie.overview %></p>
+          <% rating = movie.rating.to_i %>
+          <% un_rating = (10 - rating) %>
+          <% rating.times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+          <% un_rating.times do %>
+          <span class="fa fa-star"></span>
+          <% end %>
+          <p>User comment: <%= bookmark.comment %></p>
+        </div>
+        <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Delete bookmark?"} do %> <i class="fa-solid fa-trash"></i></li>
+      <% end %>
+        </div>
     <% end %>
-  <% end %>
-</ul>
+</div>
 <%= link_to "Back to Lists", "/lists", class: "btn btn-primary"%>
 <%= link_to "Add a Movie",  new_list_bookmark_path(@list), class: "btn btn-primary"%>
