@@ -1,9 +1,18 @@
 class ListsController < ApplicationController
+  # def index
+  #   if params[:query].present?
+  #     @lists = List.where("name ILIKE ?", "%#{params[:query]}%")
+  #   else
+  #     @lists = List.all
+  #   end
+  # end
+
   def index
+    @lists = List.all
+
     if params[:query].present?
-      @lists = List.where("name ILIKE ?", "%#{params[:query]}%")
-    else
-      @lists = List.all
+      query = "%#{params[:query]}%"
+      @lists = @lists.joins(bookmarks: :movie).where("lists.name ILIKE :query OR movies.title ILIKE :query OR movies.overview ILIKE :query", query: query).distinct
     end
   end
 
