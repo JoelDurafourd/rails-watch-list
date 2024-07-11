@@ -1,6 +1,10 @@
-<%= simple_form_for([@list, @bookmark]) do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :movie_id, collection: Movie.all%>
-  <%= f.submit %>
-<% end %>
-<%= link_to "Back to lists", "/lists", class: "btn btn-primary"%>
+<div class="form-box row justify-content-center">
+  <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+    <%= simple_form_for([@list, @bookmark]) do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :movie_id, collection: Movie.all%>
+      <%= f.submit class: "nav-button col-12"%>
+    <% end %>
+    <%= link_to "Back to lists", "/lists", class: "nav-button col-12"%>
+  </div>
+</div>

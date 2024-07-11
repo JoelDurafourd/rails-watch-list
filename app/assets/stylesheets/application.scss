@@ -48,3 +48,48 @@
 .checked {
   color: orange;
 }
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+a, u {
+  text-decoration: none;
+}
+
+.nav-button {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: #595959;
+  text-decoration: none;
+  background: none;
+  border: 1px solid lightgray;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.form-box {
+  margin: 10px;
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

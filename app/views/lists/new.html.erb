@@ -1,6 +1,10 @@
+<div class="form-box row justify-content-center">
+  <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 <%= simple_form_for([@list]) do |f| %>
   <%= f.input :name %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <%= f.submit  class: "nav-button col-12"%>
 <% end %>
-<%= link_to "Back to list", "/lists", class: "btn btn-primary"%>
+<%= link_to "Back to list", "/lists", class: "nav-button col-12"%>
+  </div>
+</div>
